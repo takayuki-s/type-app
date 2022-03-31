@@ -15,3 +15,23 @@ let negative2 = -0.12; // マイナス値OK
 let single2 = "hello";
 let double2 = "hello";
 let back2 = `hello`;
+
+// オブジェクト
+const person: {
+  name: string;
+  age: number;
+} = {
+  name: "Jack",
+  age: 21,
+};
+// オブジェクトのネスト
+const person2 = {
+  name: {
+    first: "Jack",
+    last: "Smith",
+  },
+  age: 21,
+};
+
+// 以下の方法でオブジェクトの型定義もできるが、keyの指定ができないので、一般的には使われない
+const obj: object = {};
