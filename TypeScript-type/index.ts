@@ -32,6 +32,11 @@ const person2 = {
   },
   age: 21,
 };
-
 // 以下の方法でオブジェクトの型定義もできるが、keyの指定ができないので、一般的には使われない
 const obj: object = {};
+
+// 配列
+const fruits: string[] = ["Apple", "Banana", "Grape"];
+const fruit = fruits[0];
+// fruits.push(21) // 文字列以外を入れようとするとエラーが出る
+// fruit.reduce() // 文字列に使わないメソッドを使おうとするとエラーが出る
