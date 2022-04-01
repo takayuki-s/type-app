@@ -45,3 +45,22 @@ const fruit = fruits[0];
 const book: [string, number, boolean] = ["business", 1500, false];
 book.push(21); // 初期値では4番目の要素を入れようとするとエラーが出るが、途中からの追加ではエラーが出ない
 // console.log(book[3]); // 参照時にエラーが起きる
+
+// 列挙型
+enum coffeeSize {
+  SHORT = "SHORT",
+  TALL = "TALL",
+  GRANDE = "GRANDE",
+  VENTI = "VENTI",
+}
+enum coffeeSize2 {
+  SHORT, // 0
+  TALL = "TALL", // TALL
+  GRANDE = 21, // 21
+  VENTI, // 22
+}
+const coffee = {
+  hot: true,
+  size: coffeeSize.TALL,
+};
+coffee.size = coffeeSize.SHORT;
