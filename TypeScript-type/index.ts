@@ -64,3 +64,11 @@ const coffee = {
   size: coffeeSize.TALL,
 };
 coffee.size = coffeeSize.SHORT;
+
+// any型
+let anything: any = true;
+anything = "hello";
+anything = ["hello", 33, true];
+anything = {};
+let banana = "banana";
+banana = anything; // string型のbananaにany型のanythingを代入できてしまう
