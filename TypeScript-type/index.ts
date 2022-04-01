@@ -40,3 +40,8 @@ const fruits: string[] = ["Apple", "Banana", "Grape"];
 const fruit = fruits[0];
 // fruits.push(21) // 文字列以外を入れようとするとエラーが出る
 // fruit.reduce() // 文字列に使わないメソッドを使おうとするとエラーが出る
+
+// 決まった内容の配列
+const book: [string, number, boolean] = ["business", 1500, false];
+book.push(21); // 初期値では4番目の要素を入れようとするとエラーが出るが、途中からの追加ではエラーが出ない
+// console.log(book[3]); // 参照時にエラーが起きる
