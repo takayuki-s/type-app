@@ -97,3 +97,9 @@ const cloth: {
   color: "white",
   size: "medium",
 };
+
+// 関数の型
+function add(num1: number, num2: number): number {
+  return num1 + num2;
+}
+add(2, 3);
