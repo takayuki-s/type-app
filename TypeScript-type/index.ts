@@ -134,3 +134,9 @@ text = anyInput;
 if (typeof unknownInput === "string") {
   text = unknownInput;
 }
+
+// never型
+function error(message: string): never {
+  throw new Error(message);
+}
+console.log(error("This is an error"));
