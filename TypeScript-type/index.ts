@@ -84,12 +84,15 @@ unionType.toUpperCase(); // 文字列型になったのでエラーがなくな�
 const apple: "apple" = "apple"; // "apple"で設定すると、"apple"以外はエラーとなる
 const orange = "orange"; // 型注釈を当てなくても、型推論で"orange"となる
 
+// typeエイリアスで型を変数化
+type ClothSize = "small" | "medium" | "large";
+
 // Union型とLiteral型の複合でenum型のように使える（普通オブジェクトには適用できない）
-let clothSize: "small" | "medium" | "large" = "small";
+let clothSize: ClothSize = "small";
 // オブジェクトに適用したい場合
 const cloth: {
   color: string;
-  size: "small" | "medium" | "large";
+  size: ClothSize;
 } = {
   color: "white",
   size: "medium",
