@@ -108,3 +108,6 @@ add(2, 3);
 function sayHello(): void {
   console.log("Hello!");
 }
+
+const anotherAdd: (n1: number, n2: number) => number = add;
+const doubleNumber = (num: number): number => num * 2;
