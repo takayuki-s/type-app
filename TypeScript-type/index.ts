@@ -1,6 +1,6 @@
 // 型注釈（型を明示的に宣言）
 let hasValue: boolean = true;
-let count: number = 10;
+let count: number = 11;
 let float: number = 3.14; // 小数OK
 let negative: number = -0.12; // マイナス値OK
 let single: string = "hello";
