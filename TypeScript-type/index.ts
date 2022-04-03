@@ -72,3 +72,10 @@ anything = ["hello", 33, true];
 anything = {};
 let banana = "banana";
 banana = anything; // string型のbananaにany型のanythingを代入できてしまう
+
+// Union型
+let unionType: number | string = 10;
+let unionTypes: (number | string)[] = [21, "hello"];
+// unionType.toUpperCase() // 数値型の場合はエラー
+unionType = "hello";
+unionType.toUpperCase(); // 文字列型になったのでエラーがなくなる
