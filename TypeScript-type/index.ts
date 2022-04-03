@@ -120,3 +120,17 @@ function doubleAndHandle(num: number, cb: (num: number) => number): void {
 doubleAndHandle(21, (doubleNum) => {
   return doubleNum;
 });
+
+// unknown型
+let unknownInput: unknown;
+let anyInput: any;
+let text: string;
+unknownInput = "hello";
+unknownInput = 21;
+unknownInput = true;
+text = anyInput;
+// text = unknownInput // anyだとエラーにはならない
+// unknown型を変数に入れたい場合
+if (typeof unknownInput === "string") {
+  text = unknownInput;
+}
