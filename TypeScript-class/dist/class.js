@@ -5,6 +5,11 @@ class Person {
         this.age = age;
         this.id = 32;
     }
+    static isAdult(age) {
+        if (age > 17)
+            return true;
+        return false;
+    }
     incrementAge() {
         this.age += 1;
     }
@@ -12,6 +17,7 @@ class Person {
         console.log(`Hello! My name is ${this.name}. I am ${this.age} years old.`);
     }
 }
+Person.species = "Homo sapiens";
 class Teacher extends Person {
     constructor(name, age, _subject) {
         super(name, age);
@@ -42,3 +48,6 @@ console.log(teacher.subject);
 teacher.subject = "Music";
 console.log(teacher.subject);
 teacher.greeting();
+console.log(Person.species);
+console.log(Person.isAdult(35));
+console.log(Teacher.species);
