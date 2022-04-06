@@ -39,6 +39,15 @@ class Teacher extends Person {
         }
         this._subject = value;
     }
+    static getInstance() {
+        if (Teacher.instance)
+            return Teacher.instance;
+        Teacher.instance = new Teacher("Quill", 38, "Math");
+        return Teacher.instance;
+    }
 }
-const teacher = new Teacher("Quill", 38, "Math");
+const teacher = Teacher.getInstance();
+const teacher2 = Teacher.getInstance();
+console.log(teacher);
+console.log(teacher2);
 teacher.greeting();
