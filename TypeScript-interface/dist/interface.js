@@ -25,3 +25,5 @@ const tmpDeveloper = {
     },
 };
 const user = tmpDeveloper;
+let developer = new Developer("Quill", 38, 3);
+developer.name = "Teke";
