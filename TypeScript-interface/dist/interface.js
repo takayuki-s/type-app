@@ -1,4 +1,9 @@
 "use strict";
+let addFunc;
+addFunc = (n1, n2) => {
+    return n1 + n2;
+};
+console.log(addFunc(1, 2));
 class Developer {
     constructor(name, age, experience) {
         this.name = name;
