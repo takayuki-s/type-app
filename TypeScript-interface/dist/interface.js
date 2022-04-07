@@ -4,11 +4,16 @@ addFunc = (n1, n2) => {
     return n1 + n2;
 };
 console.log(addFunc(1, 2));
+const nameable = {
+    name: "Quill",
+};
 class Developer {
-    constructor(name, age, experience) {
-        this.name = name;
+    constructor(age, experience, initName) {
         this.age = age;
         this.experience = experience;
+        if (initName) {
+            this.name = initName;
+        }
     }
     greeting(message) {
         console.log(message);
@@ -30,5 +35,5 @@ const tmpDeveloper = {
     },
 };
 const user = tmpDeveloper;
-let developer = new Developer("Quill", 38, 3);
+let developer = new Developer(38, 3, "Quill");
 developer.name = "Teke";
