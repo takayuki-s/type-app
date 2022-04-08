@@ -68,3 +68,10 @@ function havePet(pet: Pet) {
   }
 }
 havePet(new Bird());
+
+// 型アサーションは以下の2種類
+const input = <HTMLInputElement>document.getElementById("input");
+const input2 = document.getElementById("input") as HTMLInputElement; // Reactでjsx書いている時などはこっちが望ましい
+// 直接書き換える場合は、()で囲んであげる
+(document.getElementById("input") as HTMLInputElement).value =
+  "initial input value";
