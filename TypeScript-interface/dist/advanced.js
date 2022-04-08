@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const quill = {
     name: "Quill",
     role: "front-end",
@@ -20,11 +21,17 @@ function describeProfile(nomadWorker) {
     }
 }
 class Dog {
+    constructor() {
+        this.kind = "dog";
+    }
     speak() {
         console.log("bow-wow");
     }
 }
 class Bird {
+    constructor() {
+        this.kind = "bird";
+    }
     speak() {
         console.log("tweet-tweet");
     }
@@ -34,6 +41,10 @@ class Bird {
 }
 function havePet(pet) {
     pet.speak();
+    switch (pet.kind) {
+        case "bird":
+            pet.fly();
+    }
     if (pet instanceof Bird) {
         pet.fly();
     }
