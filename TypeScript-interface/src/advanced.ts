@@ -74,13 +74,13 @@ function havePet(pet: Pet) {
 havePet(new Bird());
 
 // 型アサーションは以下の2種類
-const input = <HTMLInputElement>document.getElementById("input");
-const input2 = document.getElementById("input") as HTMLInputElement; // Reactでjsx書いている時などはこっちが望ましい
-// 直接書き換える場合は、()で囲んであげる
-(document.getElementById("input") as HTMLInputElement).value =
-  "initial input value";
-// !(Non-null assertion operator)を使って、nullじゃないと言い切る
-const input3 = document.getElementById("input")!;
+// const input = <HTMLInputElement>document.getElementById("input");
+// const input2 = document.getElementById("input") as HTMLInputElement; // Reactでjsx書いている時などはこっちが望ましい
+// // 直接書き換える場合は、()で囲んであげる
+// (document.getElementById("input") as HTMLInputElement).value =
+//   "initial input value";
+// // !(Non-null assertion operator)を使って、nullじゃないと言い切る
+// const input3 = document.getElementById("input")!;
 
 interface Designer {
   name: string;
@@ -91,3 +91,18 @@ const designer: Designer = {
   name: "Quill",
   role: "Design",
 };
+
+interface DownloadedData {
+  id: number;
+  user?: {
+    name?: {
+      first?: string;
+      last?: string;
+    };
+  };
+}
+
+const downloadedData: DownloadedData = {
+  id: 1,
+};
+console.log(downloadedData.user?.name?.first);

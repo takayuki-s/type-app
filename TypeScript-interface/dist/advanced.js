@@ -1,4 +1,5 @@
 "use strict";
+var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 const quill = {
     name: "Quill",
@@ -51,15 +52,11 @@ function havePet(pet) {
     }
 }
 havePet(new Bird());
-// 型アサーションは以下の2種類
-const input = document.getElementById("input");
-const input2 = document.getElementById("input"); // Reactでjsx書いている時などはこっちが望ましい
-// 直接書き換える場合は、()で囲んであげる
-document.getElementById("input").value =
-    "initial input value";
-// !(Non-null assertion operator)を使って、nullじゃないと言い切る
-const input3 = document.getElementById("input");
 const designer = {
     name: "Quill",
     role: "Design",
 };
+const downloadedData = {
+    id: 1,
+};
+console.log((_b = (_a = downloadedData.user) === null || _a === void 0 ? void 0 : _a.name) === null || _b === void 0 ? void 0 : _b.first);
