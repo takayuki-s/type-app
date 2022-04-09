@@ -77,3 +77,13 @@ const input2 = document.getElementById("input") as HTMLInputElement; // Reactで
   "initial input value";
 // !(Non-null assertion operator)を使って、nullじゃないと言い切る
 const input3 = document.getElementById("input")!;
+
+interface Designer {
+  name: string;
+  [index: string]: string;
+}
+
+const designer: Designer = {
+  name: "Quill",
+  role: "Design",
+};

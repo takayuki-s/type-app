@@ -58,3 +58,7 @@ document.getElementById("input").value =
     "initial input value";
 // !(Non-null assertion operator)を使って、nullじゃないと言い切る
 const input3 = document.getElementById("input");
+const designer = {
+    name: "Quill",
+    role: "Design",
+};
