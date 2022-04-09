@@ -56,3 +56,5 @@ const input2 = document.getElementById("input"); // Reactでjsx書いている�
 // 直接書き換える場合は、()で囲んであげる
 document.getElementById("input").value =
     "initial input value";
+// !(Non-null assertion operator)を使って、nullじゃないと言い切る
+const input3 = document.getElementById("input");
