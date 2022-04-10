@@ -32,7 +32,16 @@ function toUpperCase(x: string | number) {
   return x;
 }
 
+interface TmpFunc {
+  (x: string): number;
+  (x: number): number;
+}
 const upperHello = toUpperCase("hello");
+const upperHello2: TmpFunc = function (x: string | number) {
+  return 0;
+};
+upperHello2("hello"); // string
+upperHello2(2); // number
 
 type NomadWorker = Engineer | Blogger;
 function describeProfile(nomadWorker: NomadWorker) {

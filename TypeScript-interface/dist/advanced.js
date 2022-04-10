@@ -13,6 +13,11 @@ function toUpperCase(x) {
     return x;
 }
 const upperHello = toUpperCase("hello");
+const upperHello2 = function (x) {
+    return 0;
+};
+upperHello2("hello"); // string
+upperHello2(2); // number
 function describeProfile(nomadWorker) {
     console.log(nomadWorker.name);
     if ("role" in nomadWorker) {
