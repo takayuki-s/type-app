@@ -108,3 +108,6 @@ const downloadedData: DownloadedData = {
 console.log(downloadedData.user?.name?.first);
 
 const userData = downloadedData.user ?? "no-user"; // userがない場合、"no-user"が代入される
+
+type id = DownloadedData["id"];
+type name = DownloadedData["id" | "user"];
