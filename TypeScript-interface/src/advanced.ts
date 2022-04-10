@@ -111,3 +111,30 @@ const userData = downloadedData.user ?? "no-user"; // userがない場合、"no-
 
 type id = DownloadedData["id"];
 type name = DownloadedData["id" | "user"];
+
+enum Color {
+  RED,
+  BLUE,
+}
+let target = "hello";
+let source: "hello" = "hello";
+target = source; // これはできるが、source = target はできない
+let color = Color.RED;
+let num = 0;
+color = num;
+num = Color.RED;
+
+// fn = fn2 としようとすると、エラーになる
+let fn = function (a: string) {};
+let fn2 = function (a: string, b: string) {};
+
+class AdvancedPerson {
+  name: string = "Peter";
+}
+class AdvancedCar {
+  name: string = "Prius";
+  age: number = 4;
+}
+let person = new AdvancedPerson();
+let car = new AdvancedCar();
+person = car; // できる
