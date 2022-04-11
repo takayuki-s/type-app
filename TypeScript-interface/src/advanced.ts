@@ -179,3 +179,12 @@ advancedFn(1, 2, 3, 4, 5);
 // レストパラメータの型定義（タプル型）
 function advancedFn2(...args: readonly [number, string, boolean]) {}
 advancedFn2(1, "apple", true);
+
+// constアサーション（as const）
+let milk = "milk" as const; // milk型になる
+let drink = milk;
+const array = [10, 20] as const; // タプル型になるし、readonlyになる
+const peter = {
+  name: "peter",
+  age: 38,
+} as const;
