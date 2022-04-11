@@ -42,6 +42,17 @@ const upperHello2: TmpFunc = function (x: string | number) {
 };
 upperHello2("hello"); // string
 upperHello2(2); // number
+interface FuncA {
+  (a: number, b: string): number;
+  (a: string, b: number): number;
+}
+interface FuncB {
+  (a: string): number;
+}
+let intersectionFunc: FuncA & FuncB; // FuncB & FuncA とすると、FuncBから参照/適用されていくので、順番も意識
+intersectionFunc = function (a: number | string, b?: number | string) {
+  return 0;
+};
 
 type NomadWorker = Engineer | Blogger;
 function describeProfile(nomadWorker: NomadWorker) {

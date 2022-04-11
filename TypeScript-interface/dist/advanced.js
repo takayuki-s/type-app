@@ -18,6 +18,10 @@ const upperHello2 = function (x) {
 };
 upperHello2("hello"); // string
 upperHello2(2); // number
+let intersectionFunc; // FuncB & FuncA とすると、FuncBから参照/適用されていくので、順番も意識
+intersectionFunc = function (a, b) {
+    return 0;
+};
 function describeProfile(nomadWorker) {
     console.log(nomadWorker.name);
     if ("role" in nomadWorker) {
