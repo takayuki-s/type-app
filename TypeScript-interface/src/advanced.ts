@@ -54,6 +54,20 @@ intersectionFunc = function (a: number | string, b?: number | string) {
   return 0;
 };
 
+interface FuncC {
+  (a: number): number;
+}
+interface FuncD {
+  (a: string): string;
+}
+let unionFunc: FuncC | FuncD;
+unionFunc = function (a: string) {
+  return "hi";
+};
+unionFunc = function (a: number) {
+  return 38;
+};
+
 type NomadWorker = Engineer | Blogger;
 function describeProfile(nomadWorker: NomadWorker) {
   console.log(nomadWorker.name);

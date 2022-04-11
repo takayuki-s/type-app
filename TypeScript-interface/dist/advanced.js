@@ -22,6 +22,13 @@ let intersectionFunc; // FuncB & FuncA とすると、FuncBから参照/適用�
 intersectionFunc = function (a, b) {
     return 0;
 };
+let unionFunc;
+unionFunc = function (a) {
+    return "hi";
+};
+unionFunc = function (a) {
+    return 38;
+};
 function describeProfile(nomadWorker) {
     console.log(nomadWorker.name);
     if ("role" in nomadWorker) {
