@@ -106,3 +106,9 @@ class AdvancedCar {
 let person = new AdvancedPerson();
 let car = new AdvancedCar();
 person = car; // できる
+// レストパラメータの型定義（配列）
+function advancedFn(...args) { }
+advancedFn(1, 2, 3, 4, 5);
+// レストパラメータの型定義（タプル型）
+function advancedFn2(...args) { }
+advancedFn2(1, "apple", true);
