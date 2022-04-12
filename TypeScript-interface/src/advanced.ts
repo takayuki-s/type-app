@@ -188,3 +188,18 @@ const peter = {
   name: "peter",
   age: 38,
 } as const;
+
+// 型の中でtypeofを使う
+type PeterType = typeof peter;
+
+const proto = {
+  model: "proto00",
+  version: 1.0,
+  isProto: true,
+};
+type protoType = typeof proto;
+const protoMachine01: protoType = {
+  model: "proto01",
+  version: 1.1,
+  isProto: true,
+};

@@ -120,3 +120,13 @@ const peter = {
     name: "peter",
     age: 38,
 };
+const proto = {
+    model: "proto00",
+    version: 1.0,
+    isProto: true,
+};
+const protoMachine01 = {
+    model: "proto01",
+    version: 1.1,
+    isProto: true,
+};
