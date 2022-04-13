@@ -67,3 +67,10 @@ fetchData.then((data) => {
   console.log(data);
 });
 const vegetables: Array<string> = ["Tomato", "Broccoli", "Asparagus"];
+
+// デフォルトの型パラメータを指定
+interface ResponseData<T = any> {
+  data: T;
+  status: number;
+}
+let tmp: ResponseData;

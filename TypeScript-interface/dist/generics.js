@@ -48,3 +48,4 @@ fetchData.then((data) => {
     console.log(data);
 });
 const vegetables = ["Tomato", "Broccoli", "Asparagus"];
+let tmp;
