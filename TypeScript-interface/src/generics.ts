@@ -48,3 +48,22 @@ const tmpDatabase: TmpDatabase<number> = {
   id: 3,
   data: [32],
 };
+
+// Utility型（型のライブラリ）
+interface Todo {
+  title: string;
+  text: string;
+}
+type Todoable = Partial<Todo>; // オプショナル
+type ReadTodo = Readonly<Todo>; // readonly
+
+const fetchData: Promise<string> = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("hello");
+  }, 1000);
+});
+fetchData.then((data) => {
+  data.toUpperCase();
+  console.log(data);
+});
+const vegetables: Array<string> = ["Tomato", "Broccoli", "Asparagus"];

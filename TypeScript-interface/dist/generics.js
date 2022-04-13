@@ -38,3 +38,13 @@ const tmpDatabase = {
     id: 3,
     data: [32],
 };
+const fetchData = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("hello");
+    }, 1000);
+});
+fetchData.then((data) => {
+    data.toUpperCase();
+    console.log(data);
+});
+const vegetables = ["Tomato", "Broccoli", "Asparagus"];
