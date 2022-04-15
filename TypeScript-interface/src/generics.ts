@@ -74,3 +74,13 @@ interface ResponseData<T = any> {
   status: number;
 }
 let tmp: ResponseData;
+
+// Mapped Types（型のfor文）
+let tmp2: ResponseData;
+interface Vegetables {
+  tomato: string;
+  pumpkin: string;
+}
+type MappedTypes = {
+  [P in keyof Vegetables]: string;
+};
