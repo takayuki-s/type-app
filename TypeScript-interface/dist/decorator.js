@@ -15,6 +15,16 @@ function Logging(constructor) {
     console.log("Logging...");
     console.log(constructor);
 }
+function Component(template, selector) {
+    return function (constructor) {
+        const mountedElement = document.querySelector(selector);
+        const instance = new constructor();
+        if (mountedElement) {
+            mountedElement.innerHTML = template;
+            mountedElement.querySelector("h1").textContent = instance.name;
+        }
+    };
+}
 let User = class User {
     constructor() {
         this.name = "Quill";
@@ -22,5 +32,6 @@ let User = class User {
     }
 };
 User = __decorate([
+    Component("<h1>{{ name }}</h1>", "#app"),
     LoggingFactory("Logging User")
 ], User);
