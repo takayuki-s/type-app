@@ -84,3 +84,13 @@ interface Vegetables {
 type MappedTypes = {
   [P in keyof Vegetables]: string;
 };
+
+// Conditional Types（型のif文）
+type ConditionalTypes = "tomato" extends string ? number : boolean; // tomato型がstring型に代入できるのであればnumber型、できないのであればboolean型
+type ConditionalTypesInfer = { tomato: "tomato" } extends { tomato: infer R }
+  ? R
+  : boolean;
+type DistributiveConditionalTypes = "tomato" | "pumpkin" extends "tomato"
+  ? number
+  : boolean;
+let temp5: NonNullable<string | null>;
