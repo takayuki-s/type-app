@@ -49,3 +49,5 @@ fetchData.then((data) => {
 });
 const vegetables = ["Tomato", "Broccoli", "Asparagus"];
 let tmp;
+// Mapped Types（型のfor文）
+let tmp2;
