@@ -16,6 +16,11 @@ function Logging(constructor) {
     console.log("Logging...");
     console.log(constructor);
 }
+function PropertyLogging(target, propertyKey) {
+    console.log("PropertyLogging");
+    console.log(target);
+    console.log(propertyKey);
+}
 function Component(template, selector) {
     console.log("Component Factory");
     return function (constructor) {
@@ -40,6 +45,9 @@ let User = class User {
         console.log("User was created!");
     }
 };
+__decorate([
+    PropertyLogging
+], User.prototype, "name", void 0);
 User = __decorate([
     LoggingFactory("Logging User"),
     Component("<h1>{{ name }}</h1>", "#app")

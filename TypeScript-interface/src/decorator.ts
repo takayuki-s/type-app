@@ -11,6 +11,12 @@ function Logging(constructor: Function) {
   console.log(constructor);
 }
 
+function PropertyLogging(target: any, propertyKey: string) {
+  console.log("PropertyLogging");
+  console.log(target);
+  console.log(propertyKey);
+}
+
 function Component(template: string, selector: string) {
   console.log("Component Factory");
   return function <T extends { new (...args: any[]): { name: string } }>(
@@ -34,6 +40,7 @@ function Component(template: string, selector: string) {
 @LoggingFactory("Logging User")
 @Component("<h1>{{ name }}</h1>", "#app")
 class User {
+  @PropertyLogging
   name = "Quill";
   constructor(public age: number) {
     console.log("User was created!");
