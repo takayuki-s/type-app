@@ -19,17 +19,23 @@ function Logging(constructor) {
 function Component(template, selector) {
     console.log("Component Factory");
     return function (constructor) {
-        const mountedElement = document.querySelector(selector);
-        console.log("Component");
-        const instance = new constructor();
-        if (mountedElement) {
-            mountedElement.innerHTML = template;
-            mountedElement.querySelector("h1").textContent = instance.name;
-        }
+        return class extends constructor {
+            constructor(...args) {
+                super(...args);
+                console.log("Component");
+                const mountedElement = document.querySelector(selector);
+                const instance = new constructor();
+                if (mountedElement) {
+                    mountedElement.innerHTML = template;
+                    mountedElement.querySelector("h1").textContent = instance.name;
+                }
+            }
+        };
     };
 }
 let User = class User {
-    constructor() {
+    constructor(age) {
+        this.age = age;
         this.name = "Quill";
         console.log("User was created!");
     }
@@ -38,3 +44,5 @@ User = __decorate([
     LoggingFactory("Logging User"),
     Component("<h1>{{ name }}</h1>", "#app")
 ], User);
+const user1 = new User(31);
+const user2 = new User(32);
