@@ -16,6 +16,16 @@ function PropertyLogging(target: any, propertyKey: string) {
   console.log(target);
   console.log(propertyKey);
 }
+function MethodLogging(
+  target: any,
+  propertyKey: string,
+  descriptor: PropertyDescriptor
+) {
+  console.log("MethodLogging");
+  console.log(target);
+  console.log(propertyKey);
+  console.log(descriptor);
+}
 
 function Component(template: string, selector: string) {
   console.log("Component Factory");
@@ -44,6 +54,10 @@ class User {
   name = "Quill";
   constructor(public age: number) {
     console.log("User was created!");
+  }
+  @MethodLogging
+  greeting() {
+    console.log("hello");
   }
 }
 

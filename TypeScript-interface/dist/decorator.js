@@ -21,6 +21,12 @@ function PropertyLogging(target, propertyKey) {
     console.log(target);
     console.log(propertyKey);
 }
+function MethodLogging(target, propertyKey, descriptor) {
+    console.log("MethodLogging");
+    console.log(target);
+    console.log(propertyKey);
+    console.log(descriptor);
+}
 function Component(template, selector) {
     console.log("Component Factory");
     return function (constructor) {
@@ -44,10 +50,16 @@ let User = class User {
         this.name = "Quill";
         console.log("User was created!");
     }
+    greeting() {
+        console.log("hello");
+    }
 };
 __decorate([
     PropertyLogging
 ], User.prototype, "name", void 0);
+__decorate([
+    MethodLogging
+], User.prototype, "greeting", null);
 User = __decorate([
     LoggingFactory("Logging User"),
     Component("<h1>{{ name }}</h1>", "#app")
