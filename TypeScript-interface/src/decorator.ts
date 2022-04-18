@@ -26,6 +26,16 @@ function MethodLogging(
   console.log(propertyKey);
   console.log(descriptor);
 }
+function AccessorLogging(
+  target: any,
+  propertyKey: string,
+  descriptor: PropertyDescriptor
+) {
+  console.log("AccessorLogging");
+  console.log(target);
+  console.log(propertyKey);
+  console.log(descriptor);
+}
 
 function Component(template: string, selector: string) {
   console.log("Component Factory");
@@ -52,8 +62,15 @@ function Component(template: string, selector: string) {
 class User {
   @PropertyLogging
   name = "Quill";
-  constructor(public age: number) {
+  constructor(private _age: number) {
     console.log("User was created!");
+  }
+  @AccessorLogging
+  get age() {
+    return this._age;
+  }
+  set age(value) {
+    this._age = value;
   }
   @MethodLogging
   greeting() {
