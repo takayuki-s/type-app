@@ -47,6 +47,16 @@ function AccessorLogging(
   console.log(propertyKey);
   console.log(descriptor);
 }
+function ParameterLogging(
+  target: any,
+  propertyKey: string,
+  parameterIndex: number
+) {
+  console.log("ParameterLogging");
+  console.log(target);
+  console.log(propertyKey);
+  console.log(parameterIndex);
+}
 
 function Component(template: string, selector: string) {
   console.log("Component Factory");
@@ -85,8 +95,8 @@ class User {
   }
   @Enumerable(false)
   @MethodLogging
-  greeting() {
-    console.log("hello");
+  greeting(@ParameterLogging message: string) {
+    console.log(message);
   }
 }
 
