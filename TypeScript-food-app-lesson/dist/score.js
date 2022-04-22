@@ -1,8 +1,11 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Score = void 0;
+const foods_js_1 = require("./foods.js");
 class Score {
     constructor() { }
     get totalScore() {
-        const foods = Foods.getInstance();
+        const foods = foods_js_1.Foods.getInstance();
         return foods.activeElementsScore.reduce((total, score) => total + score, 0);
     }
     render() {
@@ -15,3 +18,4 @@ class Score {
         return Score.instance;
     }
 }
+exports.Score = Score;
