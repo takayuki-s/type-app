@@ -9,4 +9,14 @@ namespace myApp {
   }
 }
 let nameable: myApp.Nameable;
-const name = myApp.name;
+// const name = myApp.name;
+
+// let name: string
+// function name() {}
+// enum name {}
+// class name {}
+// interface name {}
+// type name = {}
+namespace name {
+  const first: string = "Peter";
+}
