@@ -1,6 +1,6 @@
 const path = require("path");
 module.exports = {
-  entry: "./src/library.ts",
+  entry: "./src/react.tsx",
   mode: "development",
   output: {
     filename: "bundle.js",
@@ -10,13 +10,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
     ],
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js"],
   },
 };
