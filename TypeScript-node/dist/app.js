@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 // import express = require("express");
 // const express = require("express");
 const app = (0, express_1.default)();
-app.use("/", (req, res, next) => {
+app.use("/", (err, req, res, next) => {
     console.log("hello");
     next();
 });
